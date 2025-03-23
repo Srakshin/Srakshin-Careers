@@ -12,32 +12,42 @@
             height: 460px;
             width: 100%;
             object-fit: cover;
+            margin-bottom: 16px;
         }
     </style>
 </head>
 
 <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="/static/1.avif" alt="1.img">
     <div class="container">
         <h1 class="text-center mt-2 mb-4">Srakshin Careers</h1>
-        <img class="img-fluid" id="banner" src="{{ url_for('static', filename='1.avif') }}" alt="1.img">
-        <h2 class="text-center mt-2 mb-4">About Srakshin</h2>
-        <p class="lead">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, corrupti hic in sit quia corporis
-            debitis repellat architecto alias! Earum veniam sequi soluta quidem placeat provident repellat cum corrupti
-            dolorem iusto exercitationem quos ea ab ipsum nisi consectetur, quas necessitatibus. Numquam repellendus
-            nulla a sunt deserunt ipsum officia quasi asperiores!
-        </p>
-        <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+        <!-- <h2 class="text-center mt-2 mb-4">About Srakshin</h2> -->
+        <div class="row" style="margin-bottom: 16px;">
+            <div class="col-md-6">
+                <p class="lead">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, corrupti hic in sit quia
+                    corporis
+                    debitis repellat architecto alias! Earum veniam sequi soluta quidem placeat provident repellat cum
+                    corrupti
+                    dolorem iusto exercitationem quos ea ab ipsum nisi consectetur, quas necessitatibus. Numquam
+                </p>
+            </div>
+            <div class="d-none d-md-block col-md-6">
+                <img src="/static/2.avif" style="height: 320px;border-radius: 6px;margin-left: 50px;" alt="Batman">
+            </div>
+        </div>
+        <h2 class="text-center mt-2 mb-4">Job Openings</h2>
         <div>
             {% for job in jobs %}
-                {% include 'Jobitem.html' %}
+            {% include 'Jobitem.html' %}
             {% endfor %}
         </div>
         <div class="text-center">
             <button class="btn btn-primary btn-lg">Contact Us</button>
-            <p class="mt-2">copywrite 2025, Srakshin</p>
         </div>
     </div>
+    {% include 'footer.html' %}
 </body>
 
 </html>
